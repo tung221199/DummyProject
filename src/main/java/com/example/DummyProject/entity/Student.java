@@ -3,10 +3,7 @@ package com.example.DummyProject.entity;
 import lombok.Data;
 import lombok.ToString;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Date;
 @Entity
 @Data
@@ -14,11 +11,17 @@ public class Student {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id", nullable = false, updatable = false)
     private Long id;
+    @Column(name = "name")
     private String name;
+    @Column(name = "age")
     private int age;
+    @Column(name = "dob")
     private Date dob;
-    private String phone;
+    @Column(name = "phoneNumber")
+    private String phoneNumber;
+    @Column(name = "email")
     private String email;
 
     @Override
@@ -28,7 +31,7 @@ public class Student {
                 ", name='" + name + '\'' +
                 ", age=" + age +
                 ", dob=" + dob +
-                ", phone='" + phone + '\'' +
+                ", phone='" + phoneNumber + '\'' +
                 ", email='" + email + '\'' +
                 '}';
     }
