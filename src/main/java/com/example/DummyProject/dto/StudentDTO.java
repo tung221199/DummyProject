@@ -1,8 +1,11 @@
 package com.example.DummyProject.dto;
 
+import lombok.Data;
+
 import javax.persistence.Column;
 import java.util.Date;
 
+@Data
 public class StudentDTO {
     private Long id;
 
