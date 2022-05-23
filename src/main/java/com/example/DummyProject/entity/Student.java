@@ -4,6 +4,9 @@ import lombok.Data;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
+
 @Entity
 @Data
 public class Student {
@@ -22,6 +25,9 @@ public class Student {
     private String phoneNumber;
     @Column(name = "email")
     private String email;
+
+    @ManyToMany
+    private Set<Course> courses =new HashSet<>();
 
     @Override
     public String toString() {

@@ -19,7 +19,7 @@ public class StudentController {
     }
     @GetMapping("/{id}")
     public ResponseEntity<StudentDTO> getStudentById(@PathVariable Long id){
-        return ResponseEntity.ok(studentService.getStudentbyId(id));
+        return ResponseEntity.ok(studentService.getStudentById(id));
     }
 
     @PostMapping

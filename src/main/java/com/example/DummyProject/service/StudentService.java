@@ -25,7 +25,7 @@ public class StudentService {
                 .collect(Collectors.toList());
     }
 
-    public StudentDTO getStudentbyId(Long id) {
+    public StudentDTO getStudentById(Long id) {
         return studentRepository.findById(id).map(e -> modelMapper.map(e, StudentDTO.class)).orElseThrow();
 
     }
