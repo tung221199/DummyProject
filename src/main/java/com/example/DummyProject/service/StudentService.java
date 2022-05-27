@@ -16,6 +16,7 @@ public class StudentService {
     @Autowired
     private StudentRepository studentRepository;
 
+    @Autowired
     private ModelMapper modelMapper;
 
     public List<StudentDTO> getAllStudent() {

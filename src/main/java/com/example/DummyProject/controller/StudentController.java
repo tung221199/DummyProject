@@ -3,14 +3,18 @@ package com.example.DummyProject.controller;
 import com.example.DummyProject.dto.StudentDTO;
 import com.example.DummyProject.entity.Student;
 import com.example.DummyProject.service.StudentService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.persistence.Access;
 import java.util.List;
 
 @RestController
-@RequestMapping(path = "/students")
+@RequestMapping(path = "/api/v1/students")
 public class StudentController {
+
+    @Autowired
     private StudentService studentService;
 
     @GetMapping("")
