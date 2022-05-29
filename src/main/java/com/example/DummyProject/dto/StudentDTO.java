@@ -1,8 +1,7 @@
 package com.example.DummyProject.dto;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
-
-import javax.persistence.Column;
 import java.util.Date;
 
 @Data
@@ -13,6 +12,7 @@ public class StudentDTO {
 
     private int age;
 
+    @JsonFormat(pattern="yyyy-MM-dd")
     private Date dob;
 
     private String phoneNumber;

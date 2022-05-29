@@ -1,5 +1,6 @@
 package com.example.DummyProject.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -20,6 +21,7 @@ public class Student {
     @Column(name = "age")
     private int age;
     @Column(name = "dob")
+    @JsonFormat(pattern="yyyy-MM-dd")
     private Date dob;
     @Column(name = "phoneNumber")
     private String phoneNumber;

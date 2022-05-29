@@ -1,5 +1,6 @@
 package com.example.DummyProject.service;
 
+import com.example.DummyProject.dto.IStudentCourse;
 import com.example.DummyProject.dto.StudentDTO;
 import com.example.DummyProject.entity.Student;
 import com.example.DummyProject.repository.StudentRepository;
@@ -50,5 +51,9 @@ public class StudentService {
     public void deleteStudent(Long id) {
         studentRepository.findById(id).orElseThrow();
         studentRepository.deleteById(id);
+    }
+
+    public List<IStudentCourse> getALlStudentsAndCourse() {
+        return studentRepository.getALlStudentsAndCourse();
     }
 }

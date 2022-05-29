@@ -1,9 +1,11 @@
 package com.example.DummyProject.controller;
 
+import com.example.DummyProject.dto.IStudentCourse;
 import com.example.DummyProject.dto.StudentDTO;
 import com.example.DummyProject.entity.Student;
 import com.example.DummyProject.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -40,5 +42,11 @@ public class StudentController {
     public ResponseEntity<StudentDTO> deleteStudent(@PathVariable Long id){
         studentService.deleteStudent(id);
         return ResponseEntity.noContent().build();
+    }
+
+    @GetMapping("/course")
+    public ResponseEntity<List<IStudentCourse>> getALlStudentAndCourse(){
+        List<IStudentCourse> iStudentCourses=studentService.getALlStudentsAndCourse();
+        return new ResponseEntity<>(iStudentCourses, HttpStatus.OK);
     }
 }
